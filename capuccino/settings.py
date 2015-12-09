@@ -16,10 +16,10 @@ cappuccino = ServiceConfig(CAPPUCCINO)
 cappuccino.secret_key = os.urandom(64)
 
 # Cheesecake service is the authorization service
-# Default name is cheesecake. You can also change it by setting
-# 'name' attribute (default name cheesecake).
+# Default name is session. You can also change it by setting
+# 'name' attribute.
 cheesecake = ServiceConfig(CHEESECAKE)
-if not hasattr(cheesecake, 'name'): setattr(cheesecake, 'name', 'cheesecake')
+if not hasattr(cheesecake, 'name'): setattr(cheesecake, 'name', 'session')
 
 define('port', default=cappuccino.port, help='run on the given port', type=int)
 define('debug', default=False, help='debug mode')

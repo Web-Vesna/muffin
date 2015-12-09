@@ -12,5 +12,5 @@ CAPPUCCINO = {
 CHEESECAKE = {
 	'port' : 8000,
 	'ip' : 'localhost',
-	'name' : 'cheesecake'
+	'name' : 'session'
 }
