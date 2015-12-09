@@ -1,32 +1,12 @@
 import tornado.web
 import cbor
 
-from tornado.options import options
-from tornado.httpclient import AsyncHTTPClient
-from tornado.httpclient import HTTPRequest
+from tornado.httpclient import HTTPRequest, AsyncHTTPClient
 from tornado import gen
-from settings import cheesecake as session
-
-class Address:
-	def __init__(self):
-		self.ip = session.ip
-		self.port = session.port
-
-	def addr(self):
-		return 'http://' + str(self.ip) + ':' + str(self.port) + '/'
-
-address = Address()
-print address.addr()
-
-class ExampleHandler(tornado.web.RequestHandler):
-	@gen.coroutine
-	def get(self):
-		client = AsyncHTTPClient()
-		response = yield client.fetch('http://www.google.com')
-		self.write(response.body)
-		self.finish()
+from settings import session
 
 
+# Example handler
 class BaseHandler(tornado.web.RequestHandler):
 	@gen.coroutine
 	def get(self):
@@ -37,5 +17,7 @@ class BaseHandler(tornado.web.RequestHandler):
 		self.write(response.body)
 		self.finish()
 		
+
+
 
 

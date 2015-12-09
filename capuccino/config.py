@@ -9,7 +9,8 @@ CAPPUCCINO = {
 }
 
 
-CHEESECAKE = {
+# Cheesecake service
+SESSION = {
 	'port' : 8000,
 	'ip' : 'localhost',
 	'name' : 'session'
